@@ -1,0 +1,1 @@
+export const CLICK_MENU_UPDATE = 'CLICK_MENU_UPDATE'

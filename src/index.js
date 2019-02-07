@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import {Provider} from 'react-redux'
+import {Store} from './store'
+
+
+import Shell from './shell/Shell';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const AppName = "Basic Shell Skeleton"
+
+
+ReactDOM.render(
+    <Provider store={Store}>
+        <Shell AppName={AppName}/>
+    </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();
